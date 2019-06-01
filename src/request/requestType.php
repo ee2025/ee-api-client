@@ -13,10 +13,12 @@
  * OR CONDITIONS OF ANY KIND, either expressed or implied.
  */
 
-class NewsRequest implements Request
+abstract class RequestType
 {
-	public function getParams() : array
-	{
-		return [];
-	}
+	const RANKS = "ranks_feed";
+	const NEWS = "news_feed";
+	const MARKET_INFO = "market_feed";
+	const MARKET_TX = "mtrans_feed";
+	const API_INFO = "apicode_info";
+	const RESET_INFO = "reset_feed";
 }

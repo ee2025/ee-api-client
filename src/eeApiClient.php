@@ -17,6 +17,8 @@ use GuzzleHttp\Client as HttpClient;
 
 class EeApiClient
 {
+	const NEWS_MAX_RESULTS = 10000;
+
 	private $httpClient;
 	private $apiKey;
 
@@ -25,7 +27,17 @@ class EeApiClient
 		$this->httpClient = new HttpClient();
 	}
 
-	public function get(Request $request) : array
+	public function getCsv(Request $request) : string
+	{
+
+	}
+
+	public function getJson(Request $request) : string
+	{
+
+	}
+
+	public function getObjectArray(Request $request) : array
 	{
 
 	}

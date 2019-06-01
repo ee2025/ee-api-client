@@ -13,10 +13,30 @@
  * OR CONDITIONS OF ANY KIND, either expressed or implied.
  */
 
-class MarketTxRequest implements Request
+abstract class RequestBuilder implements Builder
 {
-	public function getParams() : array
+	protected $params;
+
+	function __construct()
 	{
-		return [];
+		$this->params = [];
+	}
+
+	public function setServerId(int $server_id) : void
+	{
+		switch($server_id)
+		{
+			case Server::EXPRESS;
+			case Server::ALLIANCE;
+			case Server::TEAM;
+			case Server::PRIMARY;
+			case Server::FFA;
+				$this->params["server_id"] = $this->server_id;
+				return;
+
+			default:
+				throw new \InvalidArgumentException("Invalid server_id");
+				break;
+		}
 	}
 }

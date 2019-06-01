@@ -13,8 +13,10 @@
  * OR CONDITIONS OF ANY KIND, either expressed or implied.
  */
 
-class MarketInfoRequestBuilder implements Builder
+class MarketInfoRequestBuilder extends RequestBuilder implements Builder
 {
+	protected $params;
+
 	public function build() : MarketInfoRequest
 	{
 
