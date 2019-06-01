@@ -17,8 +17,13 @@ class MarketInfoRequestBuilder extends RequestBuilder implements Builder
 {
 	protected $params;
 
+	public function setNewOnly(bool $enabled) : void
+	{
+		$this->params["new"] = $enabled;
+	}
+
 	public function build() : MarketInfoRequest
 	{
-
+		return new Request(RequestType::MARKET_INFO, $this->params);
 	}
 }

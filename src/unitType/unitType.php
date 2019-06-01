@@ -13,10 +13,23 @@
  * OR CONDITIONS OF ANY KIND, either expressed or implied.
  */
 
-class ApiInfoRequest implements Request
+class UnitType
 {
-	public function getParams() : array
-	{
-		return [];
-	}
+	const TROOPS = 1;
+	const JETS = 2;
+	const TURRETS = 3;
+	const TANKS = 4;
+	const BUSHELS = 5;
+	const OIL_BARRELS = 6;
+	const TECH_MILITARY = 7;
+	const TECH_MEDICAL = 8;
+	const TECH_BUSINESS = 9;
+	const TECH_RESIDENTIAL = 10;
+	const TECH_AGRICULTURAL = 11;
+	const TECH_WARFARE = 12;
+	const TECH_MILITARY_STRATEGY = 13;
+	const TECH_WEAPONS = 14;
+	const TECH_INDUSTRIAL = 15;
+	const TECH_SPY = 16;
+	const TECH_SDI = 17;
 }

@@ -17,28 +17,55 @@ use GuzzleHttp\Client as HttpClient;
 
 class EeApiClient
 {
+	const API_BASE_URL = "http://api.earthempires.com/";
 	const NEWS_MAX_RESULTS = 10000;
+	const MARKET_TX_MAX_RESULTS = 10000;
 
 	private $httpClient;
 	private $apiKey;
 
-	function __construct()
+	function __construct(string $apiKey)
 	{
 		$this->httpClient = new HttpClient();
+		$this->apiKey = $apiKey;
 	}
 
-	public function getCsv(Request $request) : string
+	/*
+	private function parseCsv()
 	{
+		//todo
+	}
+	*/
+
+	public function getCsv(Request $request)
+	{
+		$params = $request->getParams();
+		$params["apicode"] = $this->apiKey;
+
+		$response = $this->httpClient->request("GET",
+			self::API_BASE_URL.$request->getType(),
+			[
+				"headers" => ['Accept-Encoding' => 'gzip'],
+				"query" => $params,
+				"decode_content" => true
+			]
+		);
+		$body = $response->getBody();
+
+		return $body->getContents();
 
 	}
 
-	public function getJson(Request $request) : string
+	/*
+	public function getJson(Request $request, int $options) : string
 	{
-
+		return json_encode($this->getObjectArray($request));
 	}
 
 	public function getObjectArray(Request $request) : array
 	{
+		$result = $this->getCsv($request);
 
-	}
+		return $this->parseCsv($result);
+	}*/
 }

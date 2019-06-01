@@ -31,7 +31,7 @@ abstract class RequestBuilder implements Builder
 			case Server::TEAM;
 			case Server::PRIMARY;
 			case Server::FFA;
-				$this->params["server_id"] = $this->server_id;
+				$this->params["server_id"] = $server_id;
 				return;
 
 			default:

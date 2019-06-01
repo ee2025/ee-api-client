@@ -24,9 +24,9 @@ Get all GS attacks on Alliance Server
     $Request = $Builder->build();
 
     $ApiClient = new EeApiClient($api_key);
-    $result = $ApiClient->get($Request);
+    $result = $ApiClient->getJson($Request, JSON_PRETTY_PRINT);
 
-    echo json_encode($result, JSON_PRETTY_PRINT);
+    echo $result;
     
 ## API Endpoints
 

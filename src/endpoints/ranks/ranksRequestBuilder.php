@@ -15,8 +15,22 @@
 
 class RanksRequestBuilder extends RanksRequest
 {
+	public function setFinalResetId(int $id) : void
+	{
+		if($id < 0)
+		{
+			throw new \InvalidArgumentException("ID must be a positive integer, but is negative");
+		}
+	}
+
 	public function build() : RanksRequest
 	{
+		// Always request CSV style
+		$this->params["style"] = 0;
 
+		// Suppress no update available message
+		$this->params["suppress"] = 1;
+
+		return new Request(RequestType::RANKS, $this->params);
 	}
 }

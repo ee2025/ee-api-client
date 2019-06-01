@@ -15,8 +15,23 @@
 
 class MarketTxRequestBuilder implements Builder
 {
+	public function setStartId(int $id) : void
+	{
+		if($id < 0)
+		{
+			throw new \InvalidArgumentException("ID must be a positive integer, but is negative");
+		}
+
+		$this->params["startid"] = $id;
+	}
+
+	public function setStartTime(int $timestamp) : void
+	{
+		$this->params["starttime"] = $timestamp;
+	}
+
 	public function build() : MarketInfoRequest
 	{
-
+		return new Request(RequestType::MARKET_TX, $this->params);
 	}
 }

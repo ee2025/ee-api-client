@@ -15,8 +15,28 @@
 
 class ResetInfoRequestBuilder implements Builder
 {
+	public function setStartId(int $id) : void
+	{
+		if($id < 0)
+		{
+			throw new \InvalidArgumentException("ID must be a positive integer, but is negative");
+		}
+
+		$this->params["startid"] = $id;
+	}
+
+	public function setStartTime(int $timestamp) : void
+	{
+		$this->params["starttime"] = $timestamp;
+	}
+
+	public function setTesting(bool $enabled) : void
+	{
+		$this->params["testing"] = (int) $enabled;
+	}
+
 	public function build() : ResetInfoRequest
 	{
-
+		return new Request(RequestType::RANKS, $this->params);
 	}
 }
