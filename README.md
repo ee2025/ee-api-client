@@ -14,7 +14,7 @@ PHP 7.2 or higher
 
 Get all GS attacks on Alliance Server
 
-    use ee_api\{EeApiClient, Server, NewsRequest, NewsRequestBuilder};
+    use ee_api\{EeApiClient, Server, NewsRequestBuilder};
 
     $api_key = "foobar"; // change this to your API key
 

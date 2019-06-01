@@ -13,7 +13,7 @@
  * OR CONDITIONS OF ANY KIND, either expressed or implied.
  */
 
-use ee_api\{EeApiClient, Server, NewsRequest, NewsRequestBuilder};
+use ee_api\{EeApiClient, Server, NewsRequestBuilder};
 
 $api_key = "foobar"; // change this to your API key
 
