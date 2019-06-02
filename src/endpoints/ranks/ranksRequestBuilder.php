@@ -15,6 +15,8 @@
 
 class RanksRequestBuilder extends RanksRequest
 {
+	protected $params;
+
 	public function setFinalResetId(int $id) : void
 	{
 		if($id < 0)

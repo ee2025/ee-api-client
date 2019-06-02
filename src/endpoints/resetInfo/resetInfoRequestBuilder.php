@@ -15,6 +15,8 @@
 
 class ResetInfoRequestBuilder implements Builder
 {
+	protected $params;
+
 	public function setStartId(int $id) : void
 	{
 		if($id < 0)
