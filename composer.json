@@ -5,7 +5,7 @@
     "require": {
         "guzzlehttp/guzzle": "^6.3"
     },
-    "license": "Non-Profit OSL 3.0",
+    "license": "NPOSL-3.0",
     "authors": [
         {
             "name": "Sean McKeown",
