@@ -1,5 +1,16 @@
 {
+    "name": "seanmckeown/ee-api-client",
+    "description": "A PHP Earth Empires API client",
+    "type": "library",
     "require": {
         "guzzlehttp/guzzle": "^6.3"
-    }
+    },
+    "license": "Non-Profit OSL 3.0",
+    "authors": [
+        {
+            "name": "Sean McKeown",
+            "email": "seangcxq@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
 }
