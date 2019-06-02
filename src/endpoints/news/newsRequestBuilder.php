@@ -37,7 +37,7 @@ class NewsRequestBuilder extends RequestBuilder implements Builder
 			case AttackType::EM:
 			case AttackType::CRUISE_MISSILE:
 			case AttackType::CM:
-				$params["attack_type"] = $attack_type;
+				$this->params["attack_type"] = $attack_type;
 				return;
 
 			default:

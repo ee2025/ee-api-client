@@ -24,6 +24,7 @@ class AttackType
 	const BOMBING_RUN = 6;
 	const BR = 6;
 	const ARTILLERY_BARRAGE = 7;
+	const AB = 7;
 	const NUCLEAR_MISSILE = 10;
 	const NM = 10;
 	const CHEMICAL_MISSILE = 11;
