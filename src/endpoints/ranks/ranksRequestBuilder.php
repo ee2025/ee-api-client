@@ -23,7 +23,7 @@ class RanksRequestBuilder extends RanksRequest
 		}
 	}
 
-	public function build() : RanksRequest
+	public function build() : Request
 	{
 		// Always request CSV style
 		$this->params["style"] = 0;

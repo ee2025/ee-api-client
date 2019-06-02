@@ -30,7 +30,7 @@ class MarketTxRequestBuilder implements Builder
 		$this->params["starttime"] = $timestamp;
 	}
 
-	public function build() : MarketInfoRequest
+	public function build() : Request
 	{
 		return new Request(RequestType::MARKET_TX, $this->params);
 	}

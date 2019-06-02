@@ -35,7 +35,7 @@ class ResetInfoRequestBuilder implements Builder
 		$this->params["testing"] = (int) $enabled;
 	}
 
-	public function build() : ResetInfoRequest
+	public function build() : Request
 	{
 		return new Request(RequestType::RANKS, $this->params);
 	}
