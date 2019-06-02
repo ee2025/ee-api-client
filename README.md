@@ -32,9 +32,9 @@ Get all GS attacks on Alliance Server
 
     echo $result;
     
-## API Endpoints
+# API Endpoints
 
-### Market Info
+## Market Info
 
     $Builder = new MarketInfoRequestBuilder();
     
@@ -44,7 +44,7 @@ Only request latest news
 
 -----
 
-### Market Transaction
+## Market Transaction
 
     $Builder = new MarketTxRequestBuilder();
     
@@ -54,7 +54,7 @@ Set the start time (unix timestamp)
 
 -----
 
-### News
+## News
 
     $Builder = new NewsRequestBuilder();
     
@@ -72,7 +72,7 @@ Set the ID to start at
 
 -----
 
-### Ranks
+## Ranks
 
     $Builder = new RanksRequestBuilder();
 
@@ -82,7 +82,7 @@ Set the final reset ID to fetch
 
 -----
 
-#### Reset Info
+## Reset Info
 
     $Builder = new ResetInfoRequestBuilder();
     
