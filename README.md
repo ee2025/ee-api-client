@@ -1,5 +1,8 @@
 # ee-api-client
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ee2025/ee-api-client/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ee2025/ee-api-client/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/ee2025/ee-api-client/badges/build.png?b=master)](https://scrutinizer-ci.com/g/ee2025/ee-api-client/build-status/master)
+
 This is an API client for the EarthEmpires API.
 
 ### Requirements
