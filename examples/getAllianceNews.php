@@ -13,6 +13,8 @@
  * OR CONDITIONS OF ANY KIND, either expressed or implied.
  */
 
+require_once("../vendor/autoload.php");
+
 use ee_api\{EeApiClient, Server, NewsRequestBuilder};
 
 $api_key = "foobar"; // change this to your API key

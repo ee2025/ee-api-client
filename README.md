@@ -4,7 +4,11 @@ This is an API client for the EarthEmpires API.
 
 ### Requirements
 
-PHP 7.2 or higher
+* PHP 7.2 or higher
+
+* PHP cURL
+
+* Composer
 
 ### Installation
 
@@ -30,24 +34,66 @@ Get all GS attacks on Alliance Server
     
 ## API Endpoints
 
-#### API Info
+### Market Info
 
-Parameters
+    $Builder = new MarketInfoRequestBuilder();
+    
+Only request latest news
 
-* 
+* `setNewOnly(bool $enabled)`
 
-#### Market Info
+-----
 
-#### Market Transaction
+### Market Transaction
 
-#### News
+    $Builder = new MarketTxRequestBuilder();
+    
+Set the start time (unix timestamp)
 
-Parameters
+* `setStartTime(int $timestamp)`
 
-* Server ID
+-----
 
-* Attack Type
+### News
 
-#### Ranks
+    $Builder = new NewsRequestBuilder();
+    
+Set the start time (unix timestamp)
+
+* `setStartTime(int $timestamp)`
+
+Enable/disable testing
+
+* `setTesting(bool $enabled)`
+
+Set the ID to start at
+
+* `setStartId(int $id)`
+
+-----
+
+### Ranks
+
+    $Builder = new RanksRequestBuilder();
+
+Set the final reset ID to fetch
+
+`setFinalResetId(int $id)`
+
+-----
 
 #### Reset Info
+
+    $Builder = new ResetInfoRequestBuilder();
+    
+Set the start time (unix timestamp)
+
+* `setStartTime(int $timestamp)`
+
+Enable/disable testing
+
+* `setTesting(bool $enabled)`
+
+Set the ID to start at
+
+* `setStartId(int $id)`
