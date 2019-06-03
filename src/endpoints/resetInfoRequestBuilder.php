@@ -14,9 +14,9 @@
  */
 
 use ee_api\interfaces\Builder;
-use ee_api\request\RequestBuilder;
+use ee_api\request\{Request, RequestBuilder, RequestType};
 
-class ResetInfoRequestBuilder implements Builder
+class ResetInfoRequestBuilder extends RequestBuilder implements Builder
 {
 	protected $params;
 

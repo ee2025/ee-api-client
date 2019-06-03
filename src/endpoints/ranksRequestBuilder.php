@@ -16,7 +16,7 @@
 use ee_api\interfaces\Builder;
 use ee_api\request\{Request, RequestBuilder, RequestType};
 
-class RanksRequestBuilder extends RanksRequest
+class RanksRequestBuilder extends RequestBuilder implements Builder
 {
 	protected $params;
 
