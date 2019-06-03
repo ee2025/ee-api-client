@@ -42,6 +42,6 @@ class ResetInfoRequestBuilder extends RequestBuilder implements Builder
 
 	public function build() : Request
 	{
-		return new Request(RequestType::RANKS, $this->params);
+		return new Request(RequestType::RESET_INFO, $this->params);
 	}
 }
