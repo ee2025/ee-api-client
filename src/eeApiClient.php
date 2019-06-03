@@ -14,6 +14,7 @@
  */
 
 use GuzzleHttp\Client as HttpClient;
+use ee_api\request\Request;
 
 class EeApiClient
 {

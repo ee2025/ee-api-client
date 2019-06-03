@@ -13,6 +13,10 @@
  * OR CONDITIONS OF ANY KIND, either expressed or implied.
  */
 
+use ee_api\interfaces\Builder;
+use ee_api\request\{Request, RequestBuilder, RequestType};
+use ee_api\AttackType;
+
 class NewsRequestBuilder extends RequestBuilder implements Builder
 {
 	protected $params;
