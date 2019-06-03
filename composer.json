@@ -1,8 +1,14 @@
 {
     "name": "seanmckeown/ee-api-client",
     "description": "A PHP Earth Empires API client",
+    "keywords": [
+        "earth empires",
+        "earth 2025",
+        "api client"
+    ],
     "type": "library",
     "require": {
+        "php": ">=7.2",
         "guzzlehttp/guzzle": "^6.3"
     },
     "license": "NPOSL-3.0",
@@ -12,5 +18,9 @@
             "email": "seangcxq@gmail.com"
         }
     ],
-    "minimum-stability": "stable"
+    "autoload": {
+        "psr-4": {
+            "ee_api\\": "src/"
+        }
+    }
 }
