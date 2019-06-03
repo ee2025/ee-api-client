@@ -1,4 +1,4 @@
-<?php namespace ee_api;
+<?php namespace ee_api\endpoints;
 /*
  * Copyright 2019 Sean McKeown
  *
@@ -13,27 +13,17 @@
  * OR CONDITIONS OF ANY KIND, either expressed or implied.
  */
 
-class MarketTxRequestBuilder implements Builder
+class MarketInfoRequestBuilder extends RequestBuilder implements Builder
 {
 	protected $params;
 
-	public function setStartId(int $id) : void
+	public function setNewOnly(bool $enabled) : void
 	{
-		if($id < 0)
-		{
-			throw new \InvalidArgumentException("ID must be a positive integer, but is negative");
-		}
-
-		$this->params["startid"] = $id;
-	}
-
-	public function setStartTime(int $timestamp) : void
-	{
-		$this->params["starttime"] = $timestamp;
+		$this->params["new"] = $enabled;
 	}
 
 	public function build() : Request
 	{
-		return new Request(RequestType::MARKET_TX, $this->params);
+		return new Request(RequestType::MARKET_INFO, $this->params);
 	}
 }

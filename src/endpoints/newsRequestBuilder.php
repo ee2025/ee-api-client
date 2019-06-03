@@ -1,4 +1,4 @@
-<?php namespace ee_api;
+<?php namespace ee_api\endpoints;
 /*
  * Copyright 2019 Sean McKeown
  *

@@ -31,7 +31,7 @@ Get all GS attacks on Alliance Server
     $Request = $Builder->build();
 
     $ApiClient = new EeApiClient($api_key);
-    $result = $ApiClient->getJson($Request, JSON_PRETTY_PRINT);
+    $result = $ApiClient->getCsv($Request);
 
     echo $result;
     

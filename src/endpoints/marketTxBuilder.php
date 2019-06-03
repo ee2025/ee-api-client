@@ -1,4 +1,4 @@
-<?php namespace ee_api;
+<?php namespace ee_api\endpoints;
 /*
  * Copyright 2019 Sean McKeown
  *
@@ -13,7 +13,7 @@
  * OR CONDITIONS OF ANY KIND, either expressed or implied.
  */
 
-class ResetInfoRequestBuilder implements Builder
+class MarketTxRequestBuilder implements Builder
 {
 	protected $params;
 
@@ -32,13 +32,8 @@ class ResetInfoRequestBuilder implements Builder
 		$this->params["starttime"] = $timestamp;
 	}
 
-	public function setTesting(bool $enabled) : void
-	{
-		$this->params["testing"] = (int) $enabled;
-	}
-
 	public function build() : Request
 	{
-		return new Request(RequestType::RANKS, $this->params);
+		return new Request(RequestType::MARKET_TX, $this->params);
 	}
 }

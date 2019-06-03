@@ -1,4 +1,4 @@
-<?php namespace ee_api;
+<?php namespace ee_api\endpoints;
 /*
  * Copyright 2019 Sean McKeown
  *
@@ -13,26 +13,32 @@
  * OR CONDITIONS OF ANY KIND, either expressed or implied.
  */
 
-class RanksRequestBuilder extends RanksRequest
+class ResetInfoRequestBuilder implements Builder
 {
 	protected $params;
 
-	public function setFinalResetId(int $id) : void
+	public function setStartId(int $id) : void
 	{
 		if($id < 0)
 		{
 			throw new \InvalidArgumentException("ID must be a positive integer, but is negative");
 		}
+
+		$this->params["startid"] = $id;
+	}
+
+	public function setStartTime(int $timestamp) : void
+	{
+		$this->params["starttime"] = $timestamp;
+	}
+
+	public function setTesting(bool $enabled) : void
+	{
+		$this->params["testing"] = (int) $enabled;
 	}
 
 	public function build() : Request
 	{
-		// Always request CSV style
-		$this->params["style"] = 0;
-
-		// Suppress no update available message
-		$this->params["suppress"] = 1;
-
 		return new Request(RequestType::RANKS, $this->params);
 	}
 }

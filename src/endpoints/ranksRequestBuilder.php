@@ -1,4 +1,4 @@
-<?php namespace ee_api;
+<?php namespace ee_api\endpoints;
 /*
  * Copyright 2019 Sean McKeown
  *
@@ -13,17 +13,26 @@
  * OR CONDITIONS OF ANY KIND, either expressed or implied.
  */
 
-class MarketInfoRequestBuilder extends RequestBuilder implements Builder
+class RanksRequestBuilder extends RanksRequest
 {
 	protected $params;
 
-	public function setNewOnly(bool $enabled) : void
+	public function setFinalResetId(int $id) : void
 	{
-		$this->params["new"] = $enabled;
+		if($id < 0)
+		{
+			throw new \InvalidArgumentException("ID must be a positive integer, but is negative");
+		}
 	}
 
 	public function build() : Request
 	{
-		return new Request(RequestType::MARKET_INFO, $this->params);
+		// Always request CSV style
+		$this->params["style"] = 0;
+
+		// Suppress no update available message
+		$this->params["suppress"] = 1;
+
+		return new Request(RequestType::RANKS, $this->params);
 	}
 }
