@@ -15,7 +15,7 @@ This is an API client for the EarthEmpires API.
 
 ### Installation
 
-    composer require seanmckeown/ee-api-client:dev-master
+    composer require seanmckeown/ee-api-client
     
 ### Example
 
