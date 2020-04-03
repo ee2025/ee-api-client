@@ -14,6 +14,7 @@
  */
 
 use GuzzleHttp\Client as HttpClient;
+use \GuzzleHttp\RequestOptions as HttpRequestOptions;
 use ee_api\request\Request;
 
 class EeApiClient
@@ -21,13 +22,19 @@ class EeApiClient
 	const API_BASE_URL = "http://api.earthempires.com/";
 	const NEWS_MAX_RESULTS = 10000;
 	const MARKET_TX_MAX_RESULTS = 10000;
+	const VERIFY_SSL = false; // ideally this should be enabled, but SSL cert for 'api.earthempires.com' is currently invalid
 
 	private $httpClient;
 	private $apiKey;
 
 	function __construct(string $apiKey)
 	{
-		$this->httpClient = new HttpClient();
+		$this->httpClient = new HttpClient(['defaults' => [
+			'verify' => self::VERIFY_SSL
+		],
+			HttpRequestOptions::VERIFY  => self::VERIFY_SSL
+		]);
+
 		$this->apiKey = $apiKey;
 	}
 

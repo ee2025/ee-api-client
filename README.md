@@ -21,7 +21,8 @@ This is an API client for the EarthEmpires API.
 
 Get all GS attacks on Alliance Server
 
-    use ee_api\{EeApiClient, Server, NewsRequestBuilder};
+    use ee_api\{EeApiClient, Server};
+    use ee_api\endpoints\NewsRequestBuilder};
 
     $api_key = "foobar"; // change this to your API key
 
